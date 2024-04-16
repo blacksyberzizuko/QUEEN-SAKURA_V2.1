@@ -24,11 +24,11 @@ keepAliveIntervalMs: 30000,
 printQRInTerminal: !usePairingCode,
 logger: pino({ level: "fatal" }),
 auth: state,
-browser: ['Chrome (Linux)', '', '']
+browser: ['Chrome (SAKURA)', '', '']
 }
 const Ziyoo = func.makeWASocket(connectionOptions)
 if(usePairingCode && !Ziyoo.authState.creds.registered) {
-		const phoneNumber = await question('Masukan Nomer Yang Aktif Awali Dengan 62:\n');
+		const phoneNumber = await question('please enter your numbe ex 94:\n');
 		const code = await Ziyoo.requestPairingCode(phoneNumber.trim())
 		console.log(`[ ${code} ]`)
 
