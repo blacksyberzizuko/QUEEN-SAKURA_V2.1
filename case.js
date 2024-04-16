@@ -52,25 +52,25 @@ console.log(chalk.white.bgRed.bold(namabot), color(`[ PESAN ]`, `white`), color(
 
         const time2 = moment().tz('Asia/Jakarta').format('HH:mm:ss')
         if (time2 < "23:59:00") {
-            var ucapanWaktu = 'Selamat Malam 🏙️'
+            var ucapanWaktu = 'GOOD NIGHT 🏙️'
         }
         if (time2 < "19:00:00") {
-            var ucapanWaktu = 'Selamat Petang 🌆'
+            var ucapanWaktu = 'GOOD NIGHT 🌆'
         }
         if (time2 < "18:00:00") {
-            var ucapanWaktu = 'Selamat Sore 🌇'
+            var ucapanWaktu = 'GOOD NIGHT 🌇'
         }
         if (time2 < "15:00:00") {
-            var ucapanWaktu = 'Selamat Siang 🌤️'
+            var ucapanWaktu = 'GOOD EVENING 🌤️'
         }
         if (time2 < "10:00:00") {
-            var ucapanWaktu = 'Selamat Pagi 🌄'
+            var ucapanWaktu = 'GOOD MORNING 🌄'
         }
         if (time2 < "05:00:00") {
-            var ucapanWaktu = 'Selamat Subuh 🌆'
+            var ucapanWaktu = 'GOOD MORNING 🌆'
         }
         if (time2 < "03:00:00") {
-            var ucapanWaktu = 'Selamat Tengah Malam 🌃'
+            var ucapanWaktu = 'GOOD MORNING 🌃'
         }
 
 // Read Database
@@ -96,7 +96,7 @@ item1.TEL;waid=${i}:${i}\n
 item1.X-ABLabel:Ponsel\n
 item2.EMAIL;type=INTERNET:hehe@gmail.com\n
 item2.X-ABLabel:Email\n
-item3.URL:https://chat.whatsapp.com/C3Hz1i2uYjb3X3bmZTrFxA
+item3.URL:https://chat.whatsapp.com
 item3.X-ABLabel:YouTube\n
 item4.ADR:;;Indonesia;;;;\n
 item4.X-ABLabel:Region\n
@@ -152,7 +152,7 @@ Ziyoo.sendMessage(from, { text: teks, contextInfo: {
 "mediaType": 1, 
 "thumbnail": fkethmb, 
 "mediaUrl": "https://telegra.ph/file/e21bb9c2070ae6ff9214.jpg", 
-"sourceUrl": "https://chat.whatsapp.com/C3Hz1i2uYjb3X3bZTrFxA" }}}, { quoted: m }) }
+"sourceUrl": "https://chat.whatsapp.com" }}}, { quoted: m }) }
 
 // fake quoted bug
 const lep = { 
@@ -214,25 +214,22 @@ const owned = `${owner}@s.whatsapp.net`
 const version = require("baileys/package.json").version
 const menu = `
 *Hi @${sender.split("@")[0]} 𖤍*
-╔─「 *You Status* 」
-  ❖ ɴᴀᴍᴀ: ${pushname}
-  ❖ ɴᴜᴍʙᴇʀ: ${m.sender.split('@')[0]}
-  ❖ sᴛᴀᴛᴜs: ${isPremium ? "Premium" : "Free"}
+╔─「 *queen-sakura v2* 」
+🤹‍♀️user : ${pushname}
+👩‍💻number : ${m.sender.split('@')[0]}
+🔆version: ${isPremium ? "Premium" : "Free"}
 ╚────── ¤ ◎•>
 
 ╔════════════╗
-*PILIHAN BUG SIMPEL*
+QUEEN-SAKURA BUG COMMAND 
 ✑ .buglinkgc *<link>*
-✑ .bugidgc *<idgc>*
-✑ .tempatbug *<di tempat>*
-✑ .bugnomor *<nomor>*
-
-*BONUS BUG ZIYOO*
-✑ .unlinomor *<nomor>*
-✑ .unlidgc *<idgc>*
+✑ .bugidgc *<group id>*
+✑ .tempatbug *<bug template>*
+✑ .bugnomor *<number>*
+✑ .unlinomor *<number>*
+✑ .unlidgc *<id group>*
 ╚════════════╝
-▬▭▬▭▬▭▬▭▬▭▬
-*©Always Ziyoo*`
+QUEEN-SAKURA MD V2`
 
            Ziyoo.sendMessage(m.chat, { 
 	           text: menu,
@@ -262,13 +259,13 @@ const menu = `
 case "owner": {
 const repf = await Ziyoo.sendMessage(from, { 
 contacts: { 
-displayName: `${list.length} Kontak`, 
+displayName: `${list.length} YO YO GUY`, 
 contacts: list }, contextInfo: {
 forwardingScore: 9999999, 
 isForwarded: true,
 mentionedJid: [sender]
 }}, { quoted: m })
-Ziyoo.sendMessage(from, { text : `Hai Kak @${sender.split("@")[0]}, Nih Owner Kuh`, contextInfo:{
+Ziyoo.sendMessage(from, { text : `HI USER @${sender.split("@")[0]}, WELCOME`, contextInfo:{
 forwardingScore: 9999999, 
 isForwarded: true,
 mentionedJid:[sender]
@@ -277,13 +274,13 @@ mentionedJid:[sender]
 break
 case "addowner":
 if (!isOwner) return reply(mess.only.owner)
-if (!args[0]) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6285702447728`)
+if (!args[0]) return reply(`Penggunaan ${prefix+command} NUMBER\nEX ${prefix+command} 9476xxxxxxx`)
 bnnd = q.split("|")[0].replace(/[^0-9]/g, '')
 let ceknye = await Ziyoo.onWhatsApp(bnnd + `@s.whatsapp.net`)
-if (ceknye.length == 0) return reply(`Masukkan Nomor Yang Valid Dan Terdaftar Di WhatsApp!!!`)
+if (ceknye.length == 0) return reply(` ADD NUMBER WhatsApp!!!`)
 ownerNumber.push(bnnd)
 fs.writeFileSync('./all/database/owner.json', JSON.stringify(ownerNumber))
-reply(`Nomor ${bnnd} Telah Menjadi Owner!!!`)
+reply(`number ${bnnd} sucsses Owner!!!`)
 break
 case "delowner":
 if (!isOwner) return reply(mess.only.owner)
