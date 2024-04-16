@@ -24,7 +24,7 @@ keepAliveIntervalMs: 30000,
 printQRInTerminal: !usePairingCode,
 logger: pino({ level: "fatal" }),
 auth: state,
-browser: ['Chrome (SAKURA)', '', '']
+browser: ['Chrome (Linux)', '', '']
 }
 const Ziyoo = func.makeWASocket(connectionOptions)
 if(usePairingCode && !Ziyoo.authState.creds.registered) {
